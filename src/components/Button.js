@@ -1,6 +1,6 @@
 import React from "react"
 
-function Button({ onClick, isPrimary, buttonText }) {
+function Button({ onClick, isPrimary, buttonText, isLoading }) {
 	return (
 		<div
 			className="Polaris-Button"
@@ -14,6 +14,7 @@ function Button({ onClick, isPrimary, buttonText }) {
                 fontSize: "2rem",
 				gap: "8px",
 				textWrap: "nowrap",
+				pointerEvents: isLoading ? "none" : "",
 				...(isPrimary
 					? { background: "#6200EA", color: "#ffffff" }
 					: {}),
